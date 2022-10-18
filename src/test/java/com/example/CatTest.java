@@ -17,4 +17,11 @@ public class CatTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void CatGetFoodTest() throws Exception {
+        Cat cat = new Cat(this.feline);
+        List<String> actual = cat.getFood();
+        Assert.assertEquals(this.feline.eatMeat(), actual);
+    }
+
 }
