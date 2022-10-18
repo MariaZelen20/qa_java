@@ -1,12 +1,16 @@
-package com.example;
-
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
 import static org.junit.Assert.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class CatTest {
+
+    @Mock
     Feline feline;
 
     @Test
@@ -18,10 +22,10 @@ public class CatTest {
     }
 
     @Test
-    public void CatGetFoodTest() throws Exception {
-        Cat cat = new Cat(this.feline);
+    public void getFoodTest() throws Exception {
+        Cat cat = new Cat(feline);
         List<String> actual = cat.getFood();
-        Assert.assertEquals(this.feline.eatMeat(), actual);
+        assertEquals(feline.eatMeat(), actual);
     }
 
 }
